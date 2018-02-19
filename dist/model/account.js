@@ -14,14 +14,8 @@ var Schema = _mongoose2.default.Schema;
 
 
 var Account = new Schema({
-    email: {
-        type: String,
-        require: true
-    },
-    password: {
-        type: String,
-        required: true
-    }
+    email: String,
+    password: String
 });
 
 Account.plugin(_passportLocalMongoose2.default);
