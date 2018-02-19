@@ -2,7 +2,7 @@
 
 // Add code to greeter.js
 function greeter() {
-    var msg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'this stinks';
+    var msg = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'is dis working?';
 
     return msg;
 };
