@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     "port": process.env.PORT || 3005,
-    "bodyLimit": "100kb",
-    "mongoUrl": process.env.MONGO_URI || "mongodb://localhost:27017/test"
+    "mongoUrl": process.env.MONGODB_URI || "mongodb://localhost:27017/test",
+    "bodyLimit": "100kb"
 };
 //# sourceMappingURL=index.js.map
