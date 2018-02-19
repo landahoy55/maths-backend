@@ -8,7 +8,7 @@
 
 // app.listen(process.env.PORT || 3000);
 
-import http from 'http';
+//import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
@@ -18,7 +18,7 @@ import config from './config';
 import routes from './routes';
 
 let app = express();
-app.server = http.createServer(app);
+//app.server = http.createServer(app);
 
 //middleware - bodyparser for handling JSON. Limit set to avoid large amounts of data
 app.use(bodyParser.json({
@@ -32,7 +32,7 @@ app.use(bodyParser.json({
 app.use('/v1', routes);
 
 
-app.server.listen(config.port);
-console.log(`Started on port ${app.server.address().port}`);
+var listener = app.listen(config.port);
+console.log(`Started on port ${listener.address().port}`);
 
 export default app;
