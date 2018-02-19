@@ -1,5 +1,5 @@
 // Add code to greeter.js
-function greeter (msg = 'is dis working?') {
+function greeter (msg = 'another test') {
     return msg;
  };
  

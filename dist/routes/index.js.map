@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/routes/index.js"],"names":[],"mappings":";;AAAA;;;;AACA;;;;AACA","file":"index.js","sourcesContent":["import express from 'express';\nimport config from '../config';\nimport middleware from '../middleware';"]}

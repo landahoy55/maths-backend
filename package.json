@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon -w app --exec \"babel-node src --presets es2015\"",
+    "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets es2015\"",
     "start": "node ./dist/app.js",
-    "build": "babel app -s -D -d dist --presets es2015",
+    "build": "babel src -s -D -d dist --presets es2015",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint app"
+    "lint": "eslint src"
   },
   "eslintConfig": {
     "parserOptions": {
