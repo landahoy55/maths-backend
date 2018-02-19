@@ -10,6 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src"
   },
+  "engines": {
+    "node": "8.7.0"
+  },
   "eslintConfig": {
     "parserOptions": {
       "ecmaVersion": 7,
@@ -23,7 +26,7 @@
       "no-unused-vars": 1
     }
   },
-  "author": "",
+  "author": "Pete Malone",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
