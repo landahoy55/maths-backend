@@ -1,4 +1,4 @@
-var express = require('express');
+import express from 'express';
 var app = express();
 var greeter = require('./greeter.js');
 
