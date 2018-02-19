@@ -31,6 +31,13 @@ app.use(bodyParser.json({
 //api routes
 app.use('/v1', routes);
 
+//Testing web routes
+app.get('/test', function(req, res) {
+
+    res.status(200).send("Hello world");
+ 
+ });
+
 
 var listener = app.listen(config.port);
 console.log(`Started on port ${listener.address().port}`);

@@ -51,6 +51,12 @@ app.use(_bodyParser2.default.json({
 //api routes
 app.use('/v1', _routes2.default);
 
+//Testing web routes
+app.get('/test', function (req, res) {
+
+    res.status(200).send("Hello world");
+});
+
 var listener = app.listen(_config2.default.port);
 console.log('Started on port ' + listener.address().port);
 
