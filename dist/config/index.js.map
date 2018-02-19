@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/config/index.js"],"names":[],"mappings":";;;;;kBAAe;AACX,YAAQ;AADG,C","file":"index.js","sourcesContent":["export default {\n    \"port\": 3005\n};"]}
+{"version":3,"sources":["../../src/config/index.js"],"names":[],"mappings":";;;;;kBAAe;AACX,YAAQ,IADG;AAEX,iBAAY,OAFD;AAGX,gBAAW;AAHA,C","file":"index.js","sourcesContent":["export default {\n    \"port\": 3005,\n    \"bodyLimit\":\"100kb\",\n    \"mongoUrl\":\"mongodb://localhost:27017/test\"\n};"]}
