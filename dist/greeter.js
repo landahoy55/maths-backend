@@ -9,3 +9,4 @@ function greeter() {
 
 // Export greeter
 module.exports = greeter;
+//# sourceMappingURL=greeter.js.map
