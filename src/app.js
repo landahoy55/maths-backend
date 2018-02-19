@@ -12,7 +12,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import passport from 'passport';
 
+const LocalStrategy = require('passport-local').Strategy;
+// import { Strategy as LocalStrategy } from 'passport-local';
 
 import config from './config';
 import routes from './routes';
@@ -27,6 +30,17 @@ app.use(bodyParser.json({
 
 //passport
 //auth layer
+app.use(passport.initialize());
+let Account = require('./model/account');
+passport.use(new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password'
+    },
+    Account.authenticate()
+));
+//seralisation and deserialisation required
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 
 //api routes
 app.use('/v1', routes);
@@ -34,7 +48,7 @@ app.use('/v1', routes);
 //Testing web routes
 app.get('/test', function(req, res) {
 
-    res.status(200).send("Hello world");
+    res.status(200).send("Hello worldyee");
  
  });
 

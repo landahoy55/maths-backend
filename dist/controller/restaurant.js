@@ -22,6 +22,7 @@ exports.default = function (_ref) {
 
     var api = (0, _express.Router)();
 
+    //CREATE
     // 'v1/restaurant/add'
     api.post('/add', function (req, res) {
         var newRest = new _restaurant2.default();
@@ -32,6 +33,17 @@ exports.default = function (_ref) {
                 res.send(err);
             }
             res.json({ message: 'Saved' });
+        });
+    });
+
+    //GET - READ
+    //v1/resturant
+    api.get('/', function (req, res) {
+        _restaurant2.default.find({}, function (err, restaurants) {
+            if (err) {
+                res.send(err);
+            }
+            res.json(restaurants);
         });
     });
 
