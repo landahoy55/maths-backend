@@ -1,9 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -40,12 +36,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // app.listen(process.env.PORT || 3000);
 
-//import http from 'http';
+// import http from 'http';
 var LocalStrategy = require('passport-local').Strategy;
 // import { Strategy as LocalStrategy } from 'passport-local';
 
 var app = (0, _express2.default)();
-//app.server = http.createServer(app);
+// app.server = http.createServer(app);
 
 //middleware - bodyparser for handling JSON. Limit set to avoid large amounts of data
 app.use(_bodyParser2.default.json({
@@ -76,5 +72,6 @@ app.get('/test', function (req, res) {
 var listener = app.listen(_config2.default.port);
 console.log('Started on port ' + listener.address().port);
 
-exports.default = app;
+// export default app;
+exports = module.exports = app;
 //# sourceMappingURL=app.js.map

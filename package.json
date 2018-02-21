@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "NODE_ENV=develpment nodemon -w src --exec \"babel src --presets es2015\"",
     "start": "node ./dist/app.js",
-    "build": "babel src -s -D -d dist --presets es2015",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -s -D -d dist --presets es2015 --ignore 'src/**/*.test.js'",
+    "test": "mocha src/**/*.test.js --compilers js:babel-register",
     "lint": "eslint src"
   },
   "engines": {
@@ -43,7 +43,11 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "babel-register": "^6.26.0",
     "eslint": "^4.18.0",
-    "nodemon": "^1.15.0"
+    "expect": "^22.4.0",
+    "mocha": "^5.0.1",
+    "nodemon": "^1.15.0",
+    "supertest": "^3.0.0"
   }
 }

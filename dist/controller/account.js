@@ -39,7 +39,7 @@ exports.default = function (_ref) {
     //Register
     // v1/account
     api.post('/register', function (req, res) {
-        _account2.default.register(new _account2.default({ username: req.body.email }), req.body.password, function (err, account) {
+        _account2.default.register(new _account2.default({ username: req.body.email, name: req.body.name }), req.body.password, function (err, account) {
             if (err) {
                 res.send(err);
             }
@@ -60,7 +60,7 @@ exports.default = function (_ref) {
 
     //Logout
     // v1/account/logout
-    api.post('/login', _authMiddleware.authenticate, function (req, res) {
+    api.post('/logout', _authMiddleware.authenticate, function (req, res) {
         res.logout();
         res.status(200).send('Successfully logged out');
     });

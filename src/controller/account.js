@@ -14,7 +14,7 @@ export default ({ config, db }) => {
     //Register
     // v1/account
     api.post('/register', (req, res) => {
-        Account.register(new Account(  {username: req.body.email}),
+        Account.register(new Account(  {username: req.body.email, name: req.body.name}),
             req.body.password,
             function(err, account) {
                 if (err) {
@@ -40,7 +40,7 @@ export default ({ config, db }) => {
 
     //Logout
     // v1/account/logout
-    api.post('/login', authenticate, (req, res) => {
+    api.post('/logout', authenticate, (req, res) => {
         res.logout();
         res.status(200).send('Successfully logged out');
     })
