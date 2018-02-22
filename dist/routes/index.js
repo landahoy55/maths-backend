@@ -28,6 +28,14 @@ var _account = require('../controller/account');
 
 var _account2 = _interopRequireDefault(_account);
 
+var _question = require('../controller/question');
+
+var _question2 = _interopRequireDefault(_question);
+
+var _topic = require('../controller/topic');
+
+var _topic2 = _interopRequireDefault(_topic);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = (0, _express2.default)();
@@ -41,6 +49,8 @@ var router = (0, _express2.default)();
     //api routes
     router.use('/restaurant', (0, _restaurant2.default)({ config: _config2.default, db: db }));
     router.use('/account', (0, _account2.default)({ config: _config2.default, db: db }));
+    router.use('/question', (0, _question2.default)({ config: _config2.default, db: db }));
+    router.use('/topic', (0, _topic2.default)({ config: _config2.default, db: db }));
 });
 
 exports.default = router;

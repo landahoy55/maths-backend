@@ -27,6 +27,7 @@ let app = express();
 app.use(bodyParser.json({
     limit: config.bodyParser
 }));
+app.use(bodyParser.urlencoded({ extended: true}));
 
 //passport
 //auth layer

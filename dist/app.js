@@ -47,6 +47,7 @@ var app = (0, _express2.default)();
 app.use(_bodyParser2.default.json({
     limit: _config2.default.bodyParser
 }));
+app.use(_bodyParser2.default.urlencoded({ extended: true }));
 
 //passport
 //auth layer

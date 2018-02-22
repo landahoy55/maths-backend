@@ -1,0 +1,329 @@
+// db.subTopics.insert()
+//add questions
+
+//template
+{
+    "title":"",
+    "description":"",
+    "stage":1,
+    "questions":[
+        {
+           "question":"",
+           "correctAnswer":"",
+           "answers":[
+               {"answer":""},
+               {"answer":""},
+               {"answer":""},
+               {"answer":""}
+           ]
+        }
+    ]
+}
+
+//Numbers 1
+{
+    "title":"Number line",
+    "description":"To help think about sums, sketch a line. Draw humps along the line to show adding and subtracting",
+    "stage":1,
+    "questions":[
+        {
+           "question":"Counting on 5 from 12 is",
+           "correctAnswer":"17",
+           "answers":[
+               {"answer":"17"},
+               {"answer":"15"},
+               {"answer":"16"},
+               {"answer":"12"}
+           ]
+        },
+        {
+            "question":"Counting back 3 from 7 is",
+            "correctAnswer":"4",
+            "answers":[
+                {"answer":"4"},
+                {"answer":"1"},
+                {"answer":"12"},
+                {"answer":"8"}
+            ]
+         },
+         {
+            "question":"counting on 10 from 15 is ",
+            "correctAnswer":"25",
+            "answers":[
+                {"answer":"25"},
+                {"answer":"5"},
+                {"answer":"35"},
+                {"answer":"20"}
+            ]
+         },
+         {
+            "question":"counting on 9 from 4 is ",
+            "correctAnswer":"13",
+            "answers":[
+                {"answer":"13"},
+                {"answer":"15"},
+                {"answer":"12"},
+                {"answer":"14"}
+            ]
+         },
+         {
+            "question":"Counting back 5 from 30 is",
+            "correctAnswer":"25",
+            "answers":[
+                {"answer":"25"},
+                {"answer":"35"},
+                {"answer":"21"},
+                {"answer":"20"}
+            ]
+         }
+    ]
+}
+
+//Numbers 2
+{
+    "title":"Place Value",
+    "description":"Where a digit is written in a number affects its value. For instance 20 is worth ten times 2",
+    "stage":2,
+    "questions":[
+        {
+           "question":"What does the number 2 stand for in 62",
+           "correctAnswer":"2 units",
+           "answers":[
+               {"answer":"2 units"},
+               {"answer":"2 tens"},
+               {"answer":"12 hundreds"},
+               {"answer":"2 thousands"}
+           ]
+        },
+        {
+            "question":"What does the number 3 stand for in 32",
+            "correctAnswer":"30",
+            "answers":[
+                {"answer":"30"},
+                {"answer":"3"},
+                {"answer":"300"},
+                {"answer":"3000"}
+            ]
+         },
+         {
+            "question":"Which is not a column in a place value table?",
+            "correctAnswer":"Units",
+            "answers":[
+                {"answer":"Units"},
+                {"answer":"Twos"},
+                {"answer":"Tens"},
+                {"answer":"Thousands"}
+            ]
+         },
+         {
+            "question":"Which number is the placeholder in 2540?",
+            "correctAnswer":"0",
+            "answers":[
+                {"answer":"0"},
+                {"answer":"2"},
+                {"answer":"5"},
+                {"answer":"4"}
+            ]
+         },
+         {
+            "question":"In the number 6534 what represents the hundreds?",
+            "correctAnswer":"6",
+            "answers":[
+                {"answer":"6"},
+                {"answer":"3"},
+                {"answer":"4"},
+                {"answer":"5"}
+            ]
+         }
+    ]
+}
+
+//Numbers 3
+{
+    "title":"Decimals",
+    "description":"The digit to the right of the point represents tenth parts. So 1.2 is one and two tenths",
+    "stage":3,
+    "questions":[
+        {
+           "question":"Which of these contains whole pounds?",
+           "correctAnswer":"£3",
+           "answers":[
+               {"answer":"£3"},
+               {"answer":"£3.50"},
+               {"answer":"£2.50"},
+               {"answer":"£0.50"}
+           ]
+        },
+        {
+            "question":"Which of these symbols is a decimal point?",
+            "correctAnswer":".",
+            "answers":[
+                {"answer":"."},
+                {"answer":"/"},
+                {"answer":"£"},
+                {"answer":","}
+            ]
+         },
+         {
+            "question":"A table has a width of 1.5m, what does that mean?",
+            "correctAnswer":"1 metre and 50 centimetres",
+            "answers":[
+                {"answer":"1 metre and 50 centimetres"},
+                {"answer":"1.5 centimetres"},
+                {"answer":"1 metre and 5 centimetres"},
+                {"answer":"6 metres"}
+            ]
+         },
+         {
+            "question":"The 3 digit in 27.3 represents",
+            "correctAnswer":"3 tenths",
+            "answers":[
+                {"answer":"3 thousandths"},
+                {"answer":"3 hundreths"},
+                {"answer":"3 tenths"},
+                {"answer":"3 units"}
+            ]
+         },
+         {
+            "question":"What is 3 x 2.6",
+            "correctAnswer":"7.8",
+            "answers":[
+                {"answer":"7.8"},
+                {"answer":"78"},
+                {"answer":"0.78"},
+                {"answer":"780"}
+            ]
+         }
+    ]
+}
+
+//Number 4
+{
+    "title":"Negative numbers",
+    "description":"Negative numbers, with a minus sign in front, are used to count below zero. -1 is one below 0",
+    "stage":4,
+    "questions":[
+        {
+           "question":"Which of the following can be negative",
+           "correctAnswer":"The temperature outside",
+           "answers":[
+               {"answer":"The temperature outside"},
+               {"answer":"The weight of a baby"},
+               {"answer":"The length of a road"},
+               {"answer":"The age of a dog"}
+           ]
+        },
+        {
+            "question":"Which of the following can only be positive",
+            "correctAnswer":"The height of a person",
+            "answers":[
+                {"answer":"The height of a person"},
+                {"answer":"The floor number in a car park"},
+                {"answer":"A bank account"},
+                {"answer":"A bill from the electric company"}
+            ]
+         },
+         {
+            "question":"Dave has £200 in his account, he has to pay pay bill for £250. What will his account balance show?",
+            "correctAnswer":"-£50",
+            "answers":[
+                {"answer":"-£50"},
+                {"answer":"50"},
+                {"answer":"5"},
+                {"answer":"450"}
+            ]
+         },
+         {
+            "question":"Helen is overdrawn by £100, she pays in £50. What is her new balance?",
+            "correctAnswer":"-£50",
+            "answers":[
+                {"answer":"-£50"},
+                {"answer":"£150"},
+                {"answer":"-£200"},
+                {"answer":"£50"}
+            ]
+         },
+         {
+            "question":"The temperature was 10 degrees earlier, but has dropped by 15 degrees. What is it now?",
+            "correctAnswer":"-5",
+            "answers":[
+                {"answer":"-5"},
+                {"answer":"5"},
+                {"answer":"10"},
+                {"answer":"25"}
+            ]
+         }
+    ]
+}
+
+//Numbers 5
+{
+    "title":"Rounding",
+    "description":"Rounding a number makes it easier to work with. Estimate, or ‘best guess’ unknown amounts",
+    "stage":5,
+    "questions":[
+        {
+           "question":"A train journey takes 32 minutes. What is the time rouned to 10?",
+           "correctAnswer":"30 minutes",
+           "answers":[
+               {"answer":"30 minutes"},
+               {"answer":"20 minutes"},
+               {"answer":"40 minutes"},
+               {"answer":"10 minutes"}
+           ]
+        },
+        {
+            "question":"There was 28mm of rain last night. What is that rounded to 10?",
+            "correctAnswer":"30mm",
+            "answers":[
+                {"answer":"30mm"},
+                {"answer":"40mm"},
+                {"answer":"20mm"},
+                {"answer":"10mm"}
+            ]
+         },
+         {
+            "question":"8462 rounded to the nearest 1000 would be",
+            "correctAnswer":"8000",
+            "answers":[
+                {"answer":"8500"},
+                {"answer":"8460"},
+                {"answer":"9000"},
+                {"answer":"8000"}
+            ]
+         },
+         {
+            "question":"35 rounded to the nearest 10 would be",
+            "correctAnswer":"40",
+            "answers":[
+                {"answer":"30"},
+                {"answer":"10"},
+                {"answer":"35"},
+                {"answer":"40"}
+            ]
+         },
+         {
+            "question":"Mary has an item for £1.10 and another for £2.80, she could say the value is roughly",
+            "correctAnswer":"£4",
+            "answers":[
+                {"answer":"£4"},
+                {"answer":"£3"},
+                {"answer":"£2"},
+                {"answer":"£1"}
+            ]
+         }
+    ]
+}
+
+//Topics
+db.topics.insert({
+    "title":"Numbers",
+    "description":"User number lines, decimals and negative numbers",
+    "subTopics":[
+        {"_id":"5a8ee354421ba915dc31e426"},
+        {"_id":"5a8ee384421ba915dc31e427"},
+        {"_id":"5a8ee3a0421ba915dc31e428"},
+        {"_id":"5a8ee3b8421ba915dc31e429"},
+        {"_id":"5a8ee3cc421ba915dc31e42a"}
+    ]
+});

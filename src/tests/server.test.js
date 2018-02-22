@@ -1,7 +1,7 @@
 const expect = require('expect');
 const request = require('supertest');
 
-//import server app
+//import app
 const app = require('./../app');
 // import * as app from './../app';
 
