@@ -29,13 +29,23 @@ export default ({config, db}) => {
         //TODO: Reinsert data via Mongoose.
         //Schema can't match schemaless docs.
 
-        Topic.findOne({title:'Numbers'}, (err, topics) => {
-            if (err) {
-                res.send(err);
+        Topic.find({}).populate('subTopics').exec(
+            function(err, topic) {
+                if (err) {
+                    res.send(err)
+                }
+                console.log(JSON.stringify(topic));
+                res.json(topic);
             }
-            console.log(JSON.stringify(topics));
-            res.json(topics);
-        });
+        );
+
+        // Topic.findOne({}, (err, topics) => {
+        //     if (err) {
+        //         res.send(err);
+        //     }
+        //     console.log(JSON.stringify(topics));
+        //     res.json(topics);
+        // });
     });
     return api;
 };

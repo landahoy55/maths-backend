@@ -31,19 +31,30 @@ exports.default = function (_ref) {
     // //GET all topics
     api.get('/', function (req, res) {
 
-        _topic2.default.findOne({ title: 'Numbers' })
-        // .populate('subTopics')
-        .exec({
-            function: function _function(err, topic) {
-                if (err) {
-                    res.send(err);
-                }
-                console.log(JSON.stringify(topic));
-                res.json(topic);
+        // Topic.findOne({title:'Numbers'})
+        //     // .populate('subTopics')
+        //     .exec({
+        //         function (err, topic) {
+        //             if (err) {
+        //                 res.send(err);
+        //             }
+        //             console.log(JSON.stringify(topic));
+        //             res.json(topic)
+        //         }
+        //     });
+
+        //TODO: Reinsert data via Mongoose.
+        //Schema can't match schemaless docs.
+
+        _topic2.default.find({}).populate('subTopics').exec(function (err, topic) {
+            if (err) {
+                res.send(err);
             }
+            console.log(JSON.stringify(topic));
+            res.json(topic);
         });
 
-        // Topic.findOne({title:'Numbers'}, (err, topics) => {
+        // Topic.findOne({}, (err, topics) => {
         //     if (err) {
         //         res.send(err);
         //     }

@@ -7,6 +7,7 @@ import restaurant from '../controller/restaurant';
 import account from '../controller/account';
 import question from '../controller/question';
 import topic from '../controller/topic';
+import setup from '../controller/setup';
 
 let router = express();
 
@@ -21,6 +22,7 @@ initaliseDb(db => {
     router.use('/account', account({config, db}));
     router.use('/question', question({config, db}));
     router.use('/topic', topic({config, db}));
+    router.use('/setup', setup({config, db}));
 
 });
 

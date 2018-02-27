@@ -36,6 +36,10 @@ var _topic = require('../controller/topic');
 
 var _topic2 = _interopRequireDefault(_topic);
 
+var _setup = require('../controller/setup');
+
+var _setup2 = _interopRequireDefault(_setup);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = (0, _express2.default)();
@@ -51,6 +55,7 @@ var router = (0, _express2.default)();
     router.use('/account', (0, _account2.default)({ config: _config2.default, db: db }));
     router.use('/question', (0, _question2.default)({ config: _config2.default, db: db }));
     router.use('/topic', (0, _topic2.default)({ config: _config2.default, db: db }));
+    router.use('/setup', (0, _setup2.default)({ config: _config2.default, db: db }));
 });
 
 exports.default = router;

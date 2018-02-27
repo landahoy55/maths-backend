@@ -47,7 +47,7 @@
             ]
          },
          {
-            "question":"counting on 10 from 15 is ",
+            "question":"Counting on 10 from 15 is ",
             "correctAnswer":"25",
             "answers":[
                 {"answer":"25"},
@@ -57,7 +57,7 @@
             ]
          },
          {
-            "question":"counting on 9 from 4 is ",
+            "question":"Counting on 9 from 4 is ",
             "correctAnswer":"13",
             "answers":[
                 {"answer":"13"},

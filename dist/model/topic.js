@@ -21,8 +21,8 @@ var topicSchema = new Schema({
         type: String,
         required: true
     },
-    //    subTopics: [{type: Schema.Types.ObjectId, ref: 'SubTopic'}]
-    subTopics: [Schema.Types.ObjectId]
+    subTopics: [{ type: Schema.Types.ObjectId, ref: 'SubTopic' }]
+    // subTopics: [Schema.Types.ObjectId]
 });
 
 module.exports = _mongoose2.default.model('Topic', topicSchema);
