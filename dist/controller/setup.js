@@ -37,15 +37,15 @@ exports.default = function (_ref) {
 
     api.post('/makemaintopic', function (req, res) {
 
-        var sub1 = _mongoose2.default.Types.ObjectId("5a954598d87363290dd58fc5");
-        var sub2 = _mongoose2.default.Types.ObjectId("5a9546b08e8d1b29877af6ee");
-        var sub3 = _mongoose2.default.Types.ObjectId("5a9547f5ced0c62a1e74b9d8");
-        var sub4 = _mongoose2.default.Types.ObjectId("5a95491bb7dc4c2aa0f7447f");
-        var sub5 = _mongoose2.default.Types.ObjectId("5a954a498956bf2b2d1a5ef0");
+        var sub1 = _mongoose2.default.Types.ObjectId("5a9e77f414a7391e4f5d49f0");
+        var sub2 = _mongoose2.default.Types.ObjectId("5a9e78cf506f551ebc66b20e");
+        var sub3 = _mongoose2.default.Types.ObjectId("5a9e7a0c0399351f8d86b8d7");
+        var sub4 = _mongoose2.default.Types.ObjectId("5a9e7bbac3bf5e2039d8d30c");
+        var sub5 = _mongoose2.default.Types.ObjectId("5a9e7d88e2536e20ef885f34");
 
         new _topic2.default({
-            title: "Numbers",
-            description: "Using number lines, decimals and negative numbers",
+            title: "Percentages",
+            description: "Work out parts of amounts",
             subTopics: [sub1, sub2, sub3, sub4, sub5]
         }).save(function (err, topic) {
             if (err) res.json(err);else {
@@ -57,54 +57,54 @@ exports.default = function (_ref) {
     api.post('/makeSubtopic', function (req, res) {
 
         //sub 1
-        var answer1a = new _answer2.default({ answer: "The temperature outside" });
-        var answer2a = new _answer2.default({ answer: "The weight of a baby" });
-        var answer3a = new _answer2.default({ answer: "The length of a road" });
-        var answer4a = new _answer2.default({ answer: "The age of a dog" });
+        var answer1a = new _answer2.default({ answer: "50%" });
+        var answer2a = new _answer2.default({ answer: "25%" });
+        var answer3a = new _answer2.default({ answer: "20%" });
+        var answer4a = new _answer2.default({ answer: "100%" });
         var question1 = new _question2.default({
-            question: "Which of the following can be negative?",
-            correctAnswer: "The temperature outside",
+            question: "The probability of flipping a coin and getting heads is",
+            correctAnswer: "100%",
             answers: [answer1a, answer2a, answer3a, answer4a] });
-        var answer1b = new _answer2.default({ answer: "The height of a person" });
-        var answer2b = new _answer2.default({ answer: "The floor number in a car park" });
-        var answer3b = new _answer2.default({ answer: "A bank account" });
-        var answer4b = new _answer2.default({ answer: "A bill from the electric company" });
+        var answer1b = new _answer2.default({ answer: "1 in 6" });
+        var answer2b = new _answer2.default({ answer: "1 in 2" });
+        var answer3b = new _answer2.default({ answer: "1 in 4" });
+        var answer4b = new _answer2.default({ answer: "1 in 5" });
         var question2 = new _question2.default({
-            question: "Which of the following can only be positive?",
-            correctAnswer: "The height of a person",
+            question: "Rolling a dice and getting a 3 is",
+            correctAnswer: "1 in 6",
             answers: [answer1b, answer2b, answer3b, answer4b] });
 
-        var answer1c = new _answer2.default({ answer: "-£50" });
-        var answer2c = new _answer2.default({ answer: "50" });
-        var answer3c = new _answer2.default({ answer: "5" });
-        var answer4c = new _answer2.default({ answer: "450" });
+        var answer1c = new _answer2.default({ answer: "100%" });
+        var answer2c = new _answer2.default({ answer: "50%" });
+        var answer3c = new _answer2.default({ answer: "1%" });
+        var answer4c = new _answer2.default({ answer: "10%" });
         var question3 = new _question2.default({
-            question: "Dave has £200 in his account, he has to pay pay bill for £250. What will his account balance show?",
-            correctAnswer: "-£50",
+            question: "If something is certain the probability is",
+            correctAnswer: "100%",
             answers: [answer1c, answer2c, answer3c, answer4c] });
 
-        var answer1d = new _answer2.default({ answer: "-£50" });
-        var answer2d = new _answer2.default({ answer: "£150" });
-        var answer3d = new _answer2.default({ answer: "-£200" });
-        var answer4d = new _answer2.default({ answer: "£50" });
+        var answer1d = new _answer2.default({ answer: "1" });
+        var answer2d = new _answer2.default({ answer: "0" });
+        var answer3d = new _answer2.default({ answer: "2" });
+        var answer4d = new _answer2.default({ answer: "3" });
         var question4 = new _question2.default({
-            question: "Helen is overdrawn by £100, she pays in £50. What is her new balance?",
-            correctAnswer: "-£50",
+            question: "How many outcomes are there if you flip a coin",
+            correctAnswer: "2",
             answers: [answer1d, answer2d, answer3d, answer4d] });
 
-        var answer1e = new _answer2.default({ answer: "-5" });
-        var answer2e = new _answer2.default({ answer: "5" });
-        var answer3e = new _answer2.default({ answer: "10" });
-        var answer4e = new _answer2.default({ answer: "25" });
+        var answer1e = new _answer2.default({ answer: "Sun hat" });
+        var answer2e = new _answer2.default({ answer: "Umbrella" });
+        var answer3e = new _answer2.default({ answer: "Sun cream" });
+        var answer4e = new _answer2.default({ answer: "Light jacket" });
         var question5 = new _question2.default({
-            question: "The temperature was 10 degrees earlier, but has dropped by 15 degrees. What is it now?",
-            correctAnswer: "-5",
+            question: "What would you pick up if there is 85% chance of rain?",
+            correctAnswer: "Umbrella",
             answers: [answer1e, answer2e, answer3e, answer4e] });
 
         new _subTopic2.default({
 
-            title: "Negative numbers",
-            description: "Negative numbers, with a minus sign in front, are used to count below zero. -1 is one below 0",
+            title: "Probability",
+            description: "Measure certainty about future events with fractions or per cent. A 50% chance of rain",
             stage: 5,
             questions: [question1, question2, question3, question4, question5]
         }).save(function (err, subTopic) {

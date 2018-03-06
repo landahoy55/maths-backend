@@ -55,3 +55,11 @@ describe('POST /v1/account/login', () => {
     });
 
 });
+
+describe('GET /v1/topic', () => {
+    it('should return all topics', (done) => {
+        request(app)
+            .get('/v1/topic')
+            .expect(200, done)
+    });
+});

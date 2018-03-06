@@ -40,6 +40,14 @@ var _setup = require('../controller/setup');
 
 var _setup2 = _interopRequireDefault(_setup);
 
+var _subTopicResult = require('../controller/subTopicResult');
+
+var _subTopicResult2 = _interopRequireDefault(_subTopicResult);
+
+var _topicResults = require('../controller/topicResults');
+
+var _topicResults2 = _interopRequireDefault(_topicResults);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = (0, _express2.default)();
@@ -56,6 +64,8 @@ var router = (0, _express2.default)();
     router.use('/question', (0, _question2.default)({ config: _config2.default, db: db }));
     router.use('/topic', (0, _topic2.default)({ config: _config2.default, db: db }));
     router.use('/setup', (0, _setup2.default)({ config: _config2.default, db: db }));
+    router.use('/subtopicresult', (0, _subTopicResult2.default)({ config: _config2.default, db: db }));
+    router.use('/topicresult', (0, _topicResults2.default)({ config: _config2.default, db: db }));
 });
 
 exports.default = router;
