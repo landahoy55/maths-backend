@@ -35,6 +35,16 @@ exports.default = function (_ref) {
 
     var api = (0, _express.Router)();
 
+    api.post('/updatetopics', function (req, res) {
+        _subTopic2.default.update({}, { topic: '5a9e77f414a7391e4f5d49f0' }, { multi: true }, function (err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(result);
+            }
+        });
+    });
+
     api.post('/makemaintopic', function (req, res) {
 
         var sub1 = _mongoose2.default.Types.ObjectId("5a9e77f414a7391e4f5d49f0");

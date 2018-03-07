@@ -11,7 +11,13 @@ export default ({config, db}) => {
     let api = Router();
 
     api.post('/updatetopics', (req, res) => {
-        Subtopic.update({},{topic: 'xxx'},{multi: true});
+        SubTopic.update({},{topic: '5a9e77f414a7391e4f5d49f0'},{multi: true}, function(err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(result);
+            }
+        });
     });
 
 

@@ -8,6 +8,10 @@ var _question = require('./question');
 
 var _question2 = _interopRequireDefault(_question);
 
+var _topic = require('./topic');
+
+var _topic2 = _interopRequireDefault(_topic);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Schema = _mongoose2.default.Schema;
@@ -25,7 +29,10 @@ var subTopicSchema = new Schema({
         type: Number,
         required: true
     },
-    questions: [_question2.default.schema]
+    questions: [_question2.default.schema],
+    topic: {
+        type: _mongoose2.default.Schema.Types.ObjectId, ref: 'Topic'
+    }
 });
 
 module.exports = _mongoose2.default.model('SubTopic', subTopicSchema);

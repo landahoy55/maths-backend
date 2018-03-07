@@ -59,7 +59,10 @@ export default ({config, db}) => {
 
     //get all results - and populate - by user
     api.get('/getandpopulatebyid/:id', authenticate, (req, res) => {
-        SubTopicResult.find({ id:req.params.id }).populate('subtopic').populate('id').exec(
+        SubTopicResult.find({ id:req.params.id })
+            .populate({path: 'subtopic', model: 'SubTopic', populate: {path: 'topic', model: 'Topic'}})
+            .populate('id')
+            .exec(
             (err, subtopicresults) => {
                 if (err) {
                     res.send(err);
@@ -71,6 +74,14 @@ export default ({config, db}) => {
 
     return api;
 };
+
+// .populate({path: 'subTopicResults', model: 'SubTopicResult', populate: {path: 'subtopic', model: 'SubTopic', populate: {path: 'topic', model: 'Topic'}}})
+// .populate('id')
+// .populate('topic')
+// .populate('subtopic')
+// .exec(
+
+
 
 // SubTopicResult.find({ id:req.params.id }, (err, subtopicresults) => {
 //     if (err) {

@@ -76,7 +76,7 @@ exports.default = function (_ref) {
 
     //get all results - and populate - by user
     api.get('/getandpopulatebyid/:id', _authMiddleware.authenticate, function (req, res) {
-        _subTopicResult2.default.find({ id: req.params.id }).populate('subtopic').populate('id').exec(function (err, subtopicresults) {
+        _subTopicResult2.default.find({ id: req.params.id }).populate({ path: 'subtopic', model: 'SubTopic', populate: { path: 'topic', model: 'Topic' } }).populate('id').exec(function (err, subtopicresults) {
             if (err) {
                 res.send(err);
             }
@@ -86,6 +86,13 @@ exports.default = function (_ref) {
 
     return api;
 };
+
+// .populate({path: 'subTopicResults', model: 'SubTopicResult', populate: {path: 'subtopic', model: 'SubTopic', populate: {path: 'topic', model: 'Topic'}}})
+// .populate('id')
+// .populate('topic')
+// .populate('subtopic')
+// .exec(
+
 
 // SubTopicResult.find({ id:req.params.id }, (err, subtopicresults) => {
 //     if (err) {

@@ -65,7 +65,7 @@ export default ({config, db}) => {
     //https://stackoverflow.com/questions/28179720/mongoose-populate-nested-array
     api.get('/getandpopulatebyid/:id', authenticate, (req, res) => {
         TopicResult.find({ id:req.params.id })
-            .populate({path: 'subTopicResults', model: 'SubTopicResult', populate: {path: 'subtopic', model: 'SubTopic'}})
+            .populate({path: 'subTopicResults', model: 'SubTopicResult', populate: {path: 'subtopic', model: 'SubTopic', populate: {path: 'topic', model: 'Topic'}}})
             .populate('id')
             .populate('topic')
             .populate('subtopic')
