@@ -17,7 +17,7 @@ let subTopicSchema = new Schema({
         required: true
     },
     questions: [Question.schema],
-    topic: { 
+    parentTopic: { 
         type: mongoose.Schema.Types.ObjectId, ref: 'Topic'
     }
 });

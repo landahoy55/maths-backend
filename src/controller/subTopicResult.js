@@ -60,7 +60,7 @@ export default ({config, db}) => {
     //get all results - and populate - by user
     api.get('/getandpopulatebyid/:id', authenticate, (req, res) => {
         SubTopicResult.find({ id:req.params.id })
-            .populate({path: 'subtopic', model: 'SubTopic', populate: {path: 'topic', model: 'Topic'}})
+            .populate({path: 'subtopic', model: 'SubTopic', populate: {path: 'parentTopic', model: 'Topic'}})
             .populate('id')
             .exec(
             (err, subtopicresults) => {

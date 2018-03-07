@@ -35,6 +35,18 @@ exports.default = function (_ref) {
 
     var api = (0, _express.Router)();
 
+    //update field name - once schema has been updated
+    api.post('/updatesubfieldname', function (red, res) {
+        _subTopic2.default.updateMany({}, { $rename: { "topic": "parentTopic" } }, function (err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(result);
+            }
+        });
+    });
+
+    //adding new field - once schema has been updated
     api.post('/updatetopics', function (req, res) {
         _subTopic2.default.update({}, { topic: '5a9e77f414a7391e4f5d49f0' }, { multi: true }, function (err, result) {
             if (err) {

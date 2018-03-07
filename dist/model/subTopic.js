@@ -30,7 +30,7 @@ var subTopicSchema = new Schema({
         required: true
     },
     questions: [_question2.default.schema],
-    topic: {
+    parentTopic: {
         type: _mongoose2.default.Schema.Types.ObjectId, ref: 'Topic'
     }
 });

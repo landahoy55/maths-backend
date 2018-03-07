@@ -10,6 +10,19 @@ import Topic from '../model/topic';
 export default ({config, db}) => {
     let api = Router();
 
+    //update field name - once schema has been updated
+    api.post('/updatesubfieldname', (red, res) => {
+        SubTopic.updateMany({}, {$rename:{"topic":"parentTopic"}}, function(err, result) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(result);
+            }
+        });
+    });
+
+
+    //adding new field - once schema has been updated
     api.post('/updatetopics', (req, res) => {
         SubTopic.update({},{topic: '5a9e77f414a7391e4f5d49f0'},{multi: true}, function(err, result) {
             if (err) {
