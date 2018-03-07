@@ -69,7 +69,6 @@ export default ({config, db}) => {
             .populate('id')
             .populate('topic')
             .populate('subtopic')
-
             .exec(
             (err, topicresults) => {
                 if (err) {

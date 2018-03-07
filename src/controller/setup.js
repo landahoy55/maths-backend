@@ -10,6 +10,10 @@ import Topic from '../model/topic';
 export default ({config, db}) => {
     let api = Router();
 
+    api.post('/updatetopics', (req, res) => {
+        Subtopic.update({},{topic: 'xxx'},{multi: true});
+    });
+
 
     api.post('/makemaintopic', (req, res) => {
 

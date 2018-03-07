@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-import Question from './question'
+import Question from './question';
+import Topic from './topic';
 let Schema = mongoose.Schema;
 
 let subTopicSchema = new Schema({
@@ -15,7 +16,10 @@ let subTopicSchema = new Schema({
         type: Number,
         required: true
     },
-    questions: [Question.schema]
+    questions: [Question.schema],
+    topic: { 
+        type: mongoose.Schema.Types.ObjectId, ref: 'Topic'
+    }
 });
 
 module.exports = mongoose.model('SubTopic', subTopicSchema);

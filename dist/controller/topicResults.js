@@ -78,6 +78,7 @@ exports.default = function (_ref) {
     });
 
     //Get all results and populate by ID - nested population
+    //https://stackoverflow.com/questions/28179720/mongoose-populate-nested-array
     api.get('/getandpopulatebyid/:id', _authMiddleware.authenticate, function (req, res) {
         _topicResults2.default.find({ id: req.params.id }).populate({ path: 'subTopicResults', model: 'SubTopicResult', populate: { path: 'subtopic', model: 'SubTopic' } }).populate('id').populate('topic').populate('subtopic').exec(function (err, topicresults) {
             if (err) {
