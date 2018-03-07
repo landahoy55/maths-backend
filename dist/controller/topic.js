@@ -46,13 +46,17 @@ exports.default = function (_ref) {
         //TODO: Reinsert data via Mongoose.
         //Schema can't match schemaless docs.
 
-        _topic2.default.find({}).populate('subTopics').exec(function (err, topic) {
+        _topic2.default.find({})
+        // .populate('subTopics')
+        .populate({ path: 'subTopics', model: 'SubTopic', populate: { path: 'parentTopic', model: 'Topic' } }).exec(function (err, topic) {
             if (err) {
                 res.send(err);
             }
             console.log(JSON.stringify(topic));
             res.json(topic);
         });
+
+        // .populate({path: 'subTopicResults', model: 'SubTopicResult', populate: {path: 'subtopic', model: 'SubTopic', populate: {path: 'parentTopic', model: 'Topic'}}})
 
         // Topic.findOne({}, (err, topics) => {
         //     if (err) {

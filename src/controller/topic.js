@@ -29,7 +29,10 @@ export default ({config, db}) => {
         //TODO: Reinsert data via Mongoose.
         //Schema can't match schemaless docs.
 
-        Topic.find({}).populate('subTopics').exec(
+        Topic.find({})
+            // .populate('subTopics')
+            .populate({path:'subTopics', model:'SubTopic', populate: {path: 'parentTopic', model: 'Topic'}})
+            .exec(
             function(err, topic) {
                 if (err) {
                     res.send(err)
@@ -38,6 +41,8 @@ export default ({config, db}) => {
                 res.json(topic);
             }
         );
+
+        // .populate({path: 'subTopicResults', model: 'SubTopicResult', populate: {path: 'subtopic', model: 'SubTopic', populate: {path: 'parentTopic', model: 'Topic'}}})
 
         // Topic.findOne({}, (err, topics) => {
         //     if (err) {
