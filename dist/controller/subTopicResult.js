@@ -41,7 +41,8 @@ exports.default = function (_ref) {
             if (err) {
                 res.send(err);
             }
-            res.json({ message: 'subtopic result saved' });
+            res.json({ _id: newSubTopicResult._id });
+            // res.send(result)
         });
     });
 

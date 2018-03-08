@@ -45,7 +45,7 @@ exports.default = function (_ref) {
         });
     });
 
-    //Update a topic
+    //Update a topic - how is this handling the array?
     api.put('/postresult/:id', _authMiddleware.authenticate, function (req, res) {
         _topicResults2.default.findById(req.params.id, function (err, topicresult) {
 

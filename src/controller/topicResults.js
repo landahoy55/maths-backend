@@ -29,7 +29,7 @@ export default ({config, db}) => {
 
     });
 
-    //Update a topic
+    //Update a topic - how is this handling the array?
     api.put('/postresult/:id', authenticate, (req, res) => {
         TopicResult.findById(req.params.id, (err, topicresult) => {
             

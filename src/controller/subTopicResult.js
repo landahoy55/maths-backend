@@ -24,7 +24,9 @@ export default ({config, db}) => {
             if (err) {
                 res.send(err)
             }
-            res.json({ message: 'subtopic result saved' });
+            // res.json({ message: 'subtopic result saved' });
+            res.json({ createdId: newSubTopicResult._id });
+            // res.send(result)
         });
     });
 
