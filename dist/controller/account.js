@@ -65,9 +65,19 @@ exports.default = function (_ref) {
         res.status(200).send('Successfully logged out');
     });
 
-    //Request user info
+    //Request user info - get ID
     api.get('/me', _authMiddleware.authenticate, function (req, res) {
         res.status(200).json(req.user);
+    });
+
+    //Retreive user information - ie, name
+    api.get('/details', _authMiddleware.authenticate, function (req, res) {
+        _account2.default.findById(req.params.id, function (err, account) {
+            if (err) {
+                res.send(err);
+            }
+            res.json(account);
+        });
     });
 
     return api;

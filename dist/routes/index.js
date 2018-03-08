@@ -20,10 +20,6 @@ var _db = require('../db');
 
 var _db2 = _interopRequireDefault(_db);
 
-var _restaurant = require('../controller/restaurant');
-
-var _restaurant2 = _interopRequireDefault(_restaurant);
-
 var _account = require('../controller/account');
 
 var _account2 = _interopRequireDefault(_account);
@@ -59,7 +55,7 @@ var router = (0, _express2.default)();
     router.use((0, _middleware2.default)({ config: _config2.default, db: db }));
 
     //api routes
-    router.use('/restaurant', (0, _restaurant2.default)({ config: _config2.default, db: db }));
+
     router.use('/account', (0, _account2.default)({ config: _config2.default, db: db }));
     router.use('/question', (0, _question2.default)({ config: _config2.default, db: db }));
     router.use('/topic', (0, _topic2.default)({ config: _config2.default, db: db }));

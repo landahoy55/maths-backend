@@ -45,9 +45,19 @@ export default ({ config, db }) => {
         res.status(200).send('Successfully logged out');
     })
 
-    //Request user info
+    //Request user info - get ID
     api.get('/me', authenticate, (req, res) => {
         res.status(200).json(req.user);
+    });
+
+    //Retreive user information - ie, name
+    api.get('/details', authenticate, (req, res) => {
+        Account.findById(req.params.id, (err, account) => {
+            if (err) {
+                res.send(err)
+            }
+            res.json(account);
+        });
     });
 
     return api;
