@@ -51,7 +51,7 @@ export default ({ config, db }) => {
     });
 
     //Retreive user information - ie, name
-    api.get('/details', authenticate, (req, res) => {
+    api.get('/details/:id', authenticate, (req, res) => {
         Account.findById(req.params.id, (err, account) => {
             if (err) {
                 res.send(err)

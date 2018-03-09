@@ -71,7 +71,7 @@ exports.default = function (_ref) {
     });
 
     //Retreive user information - ie, name
-    api.get('/details', _authMiddleware.authenticate, function (req, res) {
+    api.get('/details/:id', _authMiddleware.authenticate, function (req, res) {
         _account2.default.findById(req.params.id, function (err, account) {
             if (err) {
                 res.send(err);
