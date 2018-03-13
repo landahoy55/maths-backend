@@ -44,6 +44,10 @@ var _topicResults = require('../controller/topicResults');
 
 var _topicResults2 = _interopRequireDefault(_topicResults);
 
+var _apns = require('../controller/apns');
+
+var _apns2 = _interopRequireDefault(_apns);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = (0, _express2.default)();
@@ -62,6 +66,7 @@ var router = (0, _express2.default)();
     router.use('/setup', (0, _setup2.default)({ config: _config2.default, db: db }));
     router.use('/subtopicresult', (0, _subTopicResult2.default)({ config: _config2.default, db: db }));
     router.use('/topicresult', (0, _topicResults2.default)({ config: _config2.default, db: db }));
+    router.use('/apns', (0, _apns2.default)({ config: _config2.default, db: db }));
 });
 
 exports.default = router;

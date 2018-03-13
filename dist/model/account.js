@@ -13,6 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Schema = _mongoose2.default.Schema;
 
 
+//username is set in passport
 var Account = new Schema({
     email: String,
     //added name
