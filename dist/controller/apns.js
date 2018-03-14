@@ -28,31 +28,7 @@ exports.default = function (_ref) {
     //Handle dupliactes here.
     api.post('/deviceids', function (req, res) {
 
-        //will create duplicates...
-        // let newDeviceID = new Device();
-        // newDeviceID.deviceid = req.body.device
-
-        // newDeviceID.save(err => {
-        //     if (err) {
-        //         res.send(err);
-        //     }
-        //     res.send({message:"recorded"})
-        // });
-
-
-        // Device.findOneAndUpdate({"deviceid":req.body.device},
-        //                         {"$set": { "deviceid": req.body.device}},
-        //                         {"upsert": true, 'new': true},
-        //                         function(err, doc) {
-        //                             if (err) {
-        //                                 res.send(err)
-        //                             }
-        //                             res.send(doc)
-        //                         });
-
-
-        //will not add duplicate records
-        //Only 
+        //will not add duplicate records - thanks to upsert - this can be done with FindOneAndUpdate if issues arrise
         _deviceid2.default.update({ 'deviceid': req.body.device }, { $setOnInsert: { 'deviceid': req.body.device } }, { upsert: true }, function (err, device) {
             if (err) {
                 res.send(err);
@@ -122,7 +98,8 @@ exports.default = function (_ref) {
                         console.log(failure.response);
                     }
                 });
-
+                //memory leak appearing in console without shutting down provider
+                //http2 issue?
                 apnProvider.shutdown();
             });
         });

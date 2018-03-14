@@ -48,6 +48,10 @@ var _apns = require('../controller/apns');
 
 var _apns2 = _interopRequireDefault(_apns);
 
+var _dailyChallenge = require('../controller/dailyChallenge');
+
+var _dailyChallenge2 = _interopRequireDefault(_dailyChallenge);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = (0, _express2.default)();
@@ -67,6 +71,7 @@ var router = (0, _express2.default)();
     router.use('/subtopicresult', (0, _subTopicResult2.default)({ config: _config2.default, db: db }));
     router.use('/topicresult', (0, _topicResults2.default)({ config: _config2.default, db: db }));
     router.use('/apns', (0, _apns2.default)({ config: _config2.default, db: db }));
+    router.use('/dailychallenge', (0, _dailyChallenge2.default)({ config: _config2.default, db: db }));
 });
 
 exports.default = router;
