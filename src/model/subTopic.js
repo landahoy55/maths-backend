@@ -19,6 +19,9 @@ let subTopicSchema = new Schema({
     questions: [Question.schema],
     parentTopic: { 
         type: mongoose.Schema.Types.ObjectId, ref: 'Topic'
+    },
+    quizType: {
+        type: String
     }
 });
 

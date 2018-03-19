@@ -23,8 +23,8 @@ export default ({config, db}) => {
 
 
     //adding new field - once schema has been updated
-    api.post('/updatetopics', (req, res) => {
-        SubTopic.update({},{topic: '5a9e77f414a7391e4f5d49f0'},{multi: true}, function(err, result) {
+    api.post('/updatefields', (req, res) => {
+        SubTopic.update({},{quizType: 'MultipleChoice'},{multi: true}, function(err, result) {
             if (err) {
                 res.send(err);
             } else {

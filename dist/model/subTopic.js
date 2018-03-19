@@ -32,6 +32,9 @@ var subTopicSchema = new Schema({
     questions: [_question2.default.schema],
     parentTopic: {
         type: _mongoose2.default.Schema.Types.ObjectId, ref: 'Topic'
+    },
+    quizType: {
+        type: String
     }
 });
 

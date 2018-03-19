@@ -29,6 +29,7 @@ exports.default = function (_ref) {
 
     var api = (0, _express.Router)();
 
+    //Date as YEAR MONTH DAY 20180313 3/13/2018
     api.get('/today/:id', function (req, res) {
 
         var dateAsInt = parseInt(req.params.id);
