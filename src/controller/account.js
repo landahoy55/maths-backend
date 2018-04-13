@@ -39,12 +39,17 @@ export default ({ config, db }) => {
     );
 
     //login in admin
-    api.post('/weblogin', passport.authenticate(
-        'local', {
-            session: false,
-            scope: []
-        }), generateAccessToken, respond
-    );
+
+    api.post('/web', (req, res) => {
+        res.status(200).send('HERE!');
+    });
+
+    // api.post('/weblogin', passport.authenticate(
+    //     'local', {
+    //         session: false,
+    //         scope: []
+    //     }), generateAccessToken, respond
+    // );
 
     // api.post('/weblogin', checkAdmin ,passport.authenticate(
     //     'local', {
@@ -58,7 +63,7 @@ export default ({ config, db }) => {
     api.post('/logout', authenticate, (req, res) => {
         res.logout();
         res.status(200).send('Successfully logged out');
-    })
+    });
 
     //Request user info - get ID
     api.get('/me', authenticate, (req, res) => {
