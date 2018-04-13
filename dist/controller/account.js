@@ -71,12 +71,10 @@ exports.default = function (_ref) {
     //     }), generateAccessToken, respond
     // );
 
-    // api.post('/web', checkAdmin ,passport.authenticate(
-    //     'local', {
-    //         session: false,
-    //         scope: []
-    //     }), generateAccessToken, respond
-    // );
+    api.post('/web', _authMiddleware.checkAdmin, _passport2.default.authenticate('local', {
+        session: false,
+        scope: []
+    }), _authMiddleware.generateAccessToken, _authMiddleware.respond);
 
     //Logout
     // v1/account/logout

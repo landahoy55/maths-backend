@@ -53,12 +53,12 @@ export default ({ config, db }) => {
     //     }), generateAccessToken, respond
     // );
 
-    // api.post('/web', checkAdmin ,passport.authenticate(
-    //     'local', {
-    //         session: false,
-    //         scope: []
-    //     }), generateAccessToken, respond
-    // );
+    api.post('/web', checkAdmin ,passport.authenticate(
+        'local', {
+            session: false,
+            scope: []
+        }), generateAccessToken, respond
+    );
 
     //Logout
     // v1/account/logout
