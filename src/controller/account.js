@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 import passport from 'passport';
 import config from '../config';
 
-import { generateAccessToken, respond, authenticate} from '../middleware/authMiddleware';
+import { generateAccessToken, respond, authenticate, checkAdmin} from '../middleware/authMiddleware';
 
 export default ({ config, db }) => {
     let api = Router();
@@ -32,6 +32,14 @@ export default ({ config, db }) => {
     //Login
     // v1/account/login
     api.post('/login', passport.authenticate(
+        'local', {
+            session: false,
+            scope: []
+        }), generateAccessToken, respond
+    );
+
+    //login in admin
+    api.post('/weblogin', checkAdmin ,passport.authenticate(
         'local', {
             session: false,
             scope: []

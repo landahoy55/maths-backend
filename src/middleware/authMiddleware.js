@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken';
 import expressJwt from 'express-jwt';
+import mongoose from 'mongoose';
+import Account from '../model/account';
 
 const TOKENTIME = 60*60*24*30 //30 days
 const SECRET = "Th15 15 th3 S3cr3t";
@@ -23,4 +25,32 @@ let respond = (req, res) => {
     });
 }
 
-module.exports = { authenticate, generateAccessToken, respond}
+//check admin status
+let checkAdmin = (req, res, next) => {
+    Account.findById(req.body.id, (err, account) => {
+    
+        if (err) {
+            return next(err);
+        }
+    
+        if (!account) {
+            //doesn't exist
+            res.status(401).json({
+                message: 'account not found'
+            });
+        }
+        
+        if (!user.name) {
+            //name property doesn't exist... change to admin
+            res.status(401).json({
+                message: 'no name property'
+            });
+        }
+    
+        //hand over to passport
+        next();
+    
+    });
+}
+
+module.exports = { authenticate, generateAccessToken, respond, checkAdmin}
