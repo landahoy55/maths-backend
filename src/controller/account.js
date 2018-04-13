@@ -11,6 +11,12 @@ import { generateAccessToken, respond, authenticate, checkAdmin} from '../middle
 export default ({ config, db }) => {
     let api = Router();
 
+     //login in admin
+
+    api.post('/web', (req, res) => {
+        res.status(200).send('HERE!');
+    });
+
     //Register
     // v1/account
     api.post('/register', (req, res) => {
@@ -38,11 +44,7 @@ export default ({ config, db }) => {
         }), generateAccessToken, respond
     );
 
-    //login in admin
-
-    api.post('/web', (req, res) => {
-        res.status(200).send('HERE!');
-    });
+   
 
     // api.post('/weblogin', passport.authenticate(
     //     'local', {
