@@ -53,7 +53,7 @@ export default ({ config, db }) => {
     //     }), generateAccessToken, respond
     // );
 
-    api.post('/web', checkAdmin ,passport.authenticate(
+    api.post('/web' ,passport.authenticate(
         'local', {
             session: false,
             scope: []
