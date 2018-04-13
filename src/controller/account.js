@@ -13,7 +13,7 @@ export default ({ config, db }) => {
 
      //login in admin
 
-    api.post('/web', (req, res) => {
+    api.post('/test', (req, res) => {
         res.status(200).send('HERE!');
     });
 
