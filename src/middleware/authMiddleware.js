@@ -28,7 +28,9 @@ let respond = (req, res) => {
 //check admin status
 let checkAdmin = (req, res, next) => {
     Account.find({ email:req.body.email }, (err, account) => {
-    
+        
+        console.log("In the middleware");
+
         // if (err) {
         //     // return next(err);
         //     res.status(401).json({

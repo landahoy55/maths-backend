@@ -44,6 +44,8 @@ var respond = function respond(req, res) {
 var checkAdmin = function checkAdmin(req, res, next) {
     _account2.default.find({ email: req.body.email }, function (err, account) {
 
+        console.log("In the middleware");
+
         // if (err) {
         //     // return next(err);
         //     res.status(401).json({
