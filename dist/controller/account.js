@@ -71,7 +71,7 @@ exports.default = function (_ref) {
     //     }), generateAccessToken, respond
     // );
 
-    api.post('/web', _passport2.default.authenticate('local', {
+    api.post('/web', _authMiddleware.checkAdmin, _passport2.default.authenticate('local', {
         session: false,
         scope: []
     }), _authMiddleware.generateAccessToken, _authMiddleware.respond);
