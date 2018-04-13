@@ -8,6 +8,14 @@ var _expressJwt = require('express-jwt');
 
 var _expressJwt2 = _interopRequireDefault(_expressJwt);
 
+var _mongoose = require('mongoose');
+
+var _mongoose2 = _interopRequireDefault(_mongoose);
+
+var _account = require('../model/account');
+
+var _account2 = _interopRequireDefault(_account);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TOKENTIME = 60 * 60 * 24 * 30; //30 days
@@ -32,5 +40,32 @@ var respond = function respond(req, res) {
     });
 };
 
-module.exports = { authenticate: authenticate, generateAccessToken: generateAccessToken, respond: respond };
+//check admin status
+var checkAdmin = function checkAdmin(req, res, next) {
+    _account2.default.findById(req.body.id, function (err, account) {
+
+        if (err) {
+            return next(err);
+        }
+
+        if (!account) {
+            //doesn't exist
+            res.status(401).json({
+                message: 'account not found'
+            });
+        }
+
+        if (!user.name) {
+            //name property doesn't exist... change to admin
+            res.status(401).json({
+                message: 'no name property'
+            });
+        }
+
+        //hand over to passport
+        next();
+    });
+};
+
+module.exports = { authenticate: authenticate, generateAccessToken: generateAccessToken, respond: respond, checkAdmin: checkAdmin };
 //# sourceMappingURL=authMiddleware.js.map

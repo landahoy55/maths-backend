@@ -12,7 +12,7 @@ exports.default = function (_ref) {
 
     var api = (0, _express.Router)();
 
-    //can add middleware here
+    //add middleware here
 
     return api;
 };

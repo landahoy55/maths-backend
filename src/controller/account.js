@@ -13,9 +13,9 @@ export default ({ config, db }) => {
 
      //login in admin
 
-    api.post('/test', (req, res) => {
-        res.status(200).send('HERE!');
-    });
+    // api.post('/test', (req, res) => {
+    //     res.status(200).send('HERE!');
+    // });
 
     //Register
     // v1/account
@@ -53,12 +53,12 @@ export default ({ config, db }) => {
     //     }), generateAccessToken, respond
     // );
 
-    // api.post('/weblogin', checkAdmin ,passport.authenticate(
-    //     'local', {
-    //         session: false,
-    //         scope: []
-    //     }), generateAccessToken, respond
-    // );
+    api.post('/weblogin', checkAdmin ,passport.authenticate(
+        'local', {
+            session: false,
+            scope: []
+        }), generateAccessToken, respond
+    );
 
     //Logout
     // v1/account/logout

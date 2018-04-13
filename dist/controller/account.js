@@ -36,6 +36,12 @@ exports.default = function (_ref) {
 
     var api = (0, _express.Router)();
 
+    //login in admin
+
+    // api.post('/test', (req, res) => {
+    //     res.status(200).send('HERE!');
+    // });
+
     //Register
     // v1/account
     api.post('/register', function (req, res) {
@@ -54,6 +60,18 @@ exports.default = function (_ref) {
     //Login
     // v1/account/login
     api.post('/login', _passport2.default.authenticate('local', {
+        session: false,
+        scope: []
+    }), _authMiddleware.generateAccessToken, _authMiddleware.respond);
+
+    // api.post('/weblogin', passport.authenticate(
+    //     'local', {
+    //         session: false,
+    //         scope: []
+    //     }), generateAccessToken, respond
+    // );
+
+    api.post('/weblogin', _authMiddleware.checkAdmin, _passport2.default.authenticate('local', {
         session: false,
         scope: []
     }), _authMiddleware.generateAccessToken, _authMiddleware.respond);
