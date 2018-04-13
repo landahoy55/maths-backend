@@ -31,26 +31,26 @@ let checkAdmin = (req, res, next) => {
         
         console.log("In the middleware");
 
-        // if (err) {
-        //     // return next(err);
-        //     res.status(401).json({
-        //         message: 'error'
-        //     });
-        // }
+        if (err) {
+            // return next(err);
+            res.status(401).json({
+                message: 'error'
+            });
+        }
     
-        // if (!account) {
-        //     //doesn't exist
-        //     res.status(401).json({
-        //         message: 'account not found'
-        //     });
-        // }
+        if (!account) {
+            //doesn't exist
+            res.status(401).json({
+                message: 'account not found'
+            });
+        }
         
-        // if (!user.name) {
-        //     //name property doesn't exist... change to admin
-        //     res.status(401).json({
-        //         message: 'no name property'
-        //     });
-        // }
+        if (!user.name) {
+            //name property doesn't exist... change to admin
+            res.status(401).json({
+                message: 'no name property'
+            });
+        }
     
         //hand over to passport
         next();
