@@ -38,9 +38,9 @@ exports.default = function (_ref) {
 
     //login in admin
 
-    // api.post('/test', (req, res) => {
-    //     res.status(200).send('HERE!');
-    // });
+    api.post('/test', function (req, res) {
+        res.status(200).send('HERE!');
+    });
 
     //Register
     // v1/account
@@ -71,10 +71,12 @@ exports.default = function (_ref) {
     //     }), generateAccessToken, respond
     // );
 
-    api.post('/web', _authMiddleware.checkAdmin, _passport2.default.authenticate('local', {
-        session: false,
-        scope: []
-    }), _authMiddleware.generateAccessToken, _authMiddleware.respond);
+    // api.post('/web', checkAdmin ,passport.authenticate(
+    //     'local', {
+    //         session: false,
+    //         scope: []
+    //     }), generateAccessToken, respond
+    // );
 
     //Logout
     // v1/account/logout
