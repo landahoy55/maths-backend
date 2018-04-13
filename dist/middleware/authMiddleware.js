@@ -60,7 +60,7 @@ var checkAdmin = function checkAdmin(req, res, next) {
             });
         }
 
-        if (!user.name) {
+        if (!account.name) {
             //name property doesn't exist... change to admin
             res.status(401).json({
                 message: 'no name property'
