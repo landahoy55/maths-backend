@@ -39,12 +39,19 @@ export default ({ config, db }) => {
     );
 
     //login in admin
-    api.post('/weblogin', checkAdmin ,passport.authenticate(
+    api.post('/weblogin', passport.authenticate(
         'local', {
             session: false,
             scope: []
         }), generateAccessToken, respond
     );
+
+    // api.post('/weblogin', checkAdmin ,passport.authenticate(
+    //     'local', {
+    //         session: false,
+    //         scope: []
+    //     }), generateAccessToken, respond
+    // );
 
     //Logout
     // v1/account/logout
