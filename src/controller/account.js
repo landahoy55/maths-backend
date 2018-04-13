@@ -44,8 +44,6 @@ export default ({ config, db }) => {
         }), generateAccessToken, respond
     );
 
-   
-
     // api.post('/weblogin', passport.authenticate(
     //     'local', {
     //         session: false,
