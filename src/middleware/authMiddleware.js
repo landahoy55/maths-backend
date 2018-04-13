@@ -27,7 +27,7 @@ let respond = (req, res) => {
 
 //check admin status
 let checkAdmin = (req, res, next) => {
-    Account.findById(req.body.id, (err, account) => {
+    Account.find({ email:req.body.id }, (err, account) => {
     
         if (err) {
             return next(err);

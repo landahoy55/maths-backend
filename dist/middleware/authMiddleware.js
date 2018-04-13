@@ -42,7 +42,7 @@ var respond = function respond(req, res) {
 
 //check admin status
 var checkAdmin = function checkAdmin(req, res, next) {
-    _account2.default.findById(req.body.id, function (err, account) {
+    _account2.default.find({ email: req.body.id }, function (err, account) {
 
         if (err) {
             return next(err);
