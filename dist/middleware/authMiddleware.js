@@ -45,7 +45,10 @@ var checkAdmin = function checkAdmin(req, res, next) {
     _account2.default.find({ email: req.body.id }, function (err, account) {
 
         if (err) {
-            return next(err);
+            // return next(err);
+            res.status(401).json({
+                message: 'error'
+            });
         }
 
         if (!account) {

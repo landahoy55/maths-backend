@@ -30,7 +30,10 @@ let checkAdmin = (req, res, next) => {
     Account.find({ email:req.body.id }, (err, account) => {
     
         if (err) {
-            return next(err);
+            // return next(err);
+            res.status(401).json({
+                message: 'error'
+            });
         }
     
         if (!account) {
